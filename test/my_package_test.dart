@@ -14,6 +14,11 @@ class MockMyPackagePlatform
   Future<bool?> setGoogleMapKey({required String key}) {
     return Future.value(true);
   }
+
+  @override
+  Future<String?> getGoogleMapKey() {
+   return Future.value("adaa");
+  }
 }
 
 void main() {
