@@ -1,5 +1,5 @@
 #import "MyPackagePlugin.h"
-
+#import "GoogleMaps/GoogleMaps.h"
 @implementation MyPackagePlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
@@ -12,7 +12,11 @@
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
-  } else {
+  }
+  else if([@"setGoogleMapKey" isEqualToString:call.method]){
+
+  }
+  else {
     result(FlutterMethodNotImplemented);
   }
 }
